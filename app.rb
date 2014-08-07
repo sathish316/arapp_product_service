@@ -18,6 +18,14 @@ get '/products' do
        	title: "Timex AZ-P#{index}"
       }
     end.to_json
+  elsif params[:category] == "shades"
+    (1..8).collect do |index|
+        {
+          url:"http://localhost:36061/images/shades-#{index}.png",
+          price: "Rs #{400 + 20*index}",
+          title: "Fastrack F#{index}"
+        }
+  	end.to_json
   end
 end
 
