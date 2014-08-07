@@ -27,7 +27,7 @@ get '/products' do
           title: "Fastrack F#{index}"
         }
   	end.to_json
-  elseif params[:category] == 'shoes'
+  elsif params[:category] == 'shoes'
     (1..8).collect do |index|
         {
           url:"http://#{hostname}/img/shoes-#{index}.png",
