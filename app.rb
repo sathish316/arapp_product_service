@@ -30,7 +30,7 @@ get '/products' do
   elseif params[:category] == 'shoes'
     (1..8).collect do |index|
         {
-          url:"http://localhost:36061/images/shoes-#{index}.png",
+          url:"http://#{hostname}/img/shoes-#{index}.png",
           price: "Rs #{600 + 20*index}",
           title: "Puma PM#{index}"
         }
