@@ -10,10 +10,11 @@ require "active_support/core_ext"
 class ProductService < Sinatra::Base
 
 get '/products' do
+  hostname = "sleepy-retreat-2061.herokuapp.com"
   if params[:category] == "watches"
     (1..6).collect do |index|
       {
-      	url:"http://localhost:36061/images/watches-#{index}.png",
+      	url:"http://#{hostname}/img/watches-#{index}.png",
        	price: "Rs. #{1000 + 100*index}",
        	title: "Timex AZ-P#{index}"
       }
@@ -21,7 +22,7 @@ get '/products' do
   elsif params[:category] == "shades"
     (1..8).collect do |index|
         {
-          url:"http://localhost:36061/images/shades-#{index}.png",
+          url:"http://#{hostname}/img/shades-#{index}.png",
           price: "Rs #{400 + 20*index}",
           title: "Fastrack F#{index}"
         }
