@@ -35,7 +35,7 @@ get '/products' do
           title: "Puma PM#{index}"
         }
         end.to_json
-      elsif params[:category] == 'jewel'
+  elsif params[:category] == 'jewelry'
     (1..3).collect do |index|
         {
           url:"http://#{hostname}/img/shoes-#{index}.png",
