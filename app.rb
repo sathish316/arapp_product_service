@@ -28,11 +28,19 @@ get '/products' do
         }
   	end.to_json
   elsif params[:category] == 'shoes'
-    (1..8).collect do |index|
+    (1..6).collect do |index|
         {
           url:"http://#{hostname}/img/shoes-#{index}.png",
           price: "Rs #{600 + 20*index}",
           title: "Puma PM#{index}"
+        }
+        end.to_json
+      elsif params[:category] == 'jewel'
+    (1..3).collect do |index|
+        {
+          url:"http://#{hostname}/img/shoes-#{index}.png",
+          price: "Rs #{60000 + 2000*index}",
+          title: "Naksatra Necklace #{index}"
         }
         end.to_json
   end
